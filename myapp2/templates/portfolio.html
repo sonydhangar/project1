@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Portfolio us
+{% endblock %}
+
+{% block content %}
+<!--banner section start -->
+{% load static %}
+<!--banner section start -->
+<div class="banner-section">
+    <div class="container">
+	    <div class="banner-content">
+	       <h4 class="banner-heading-1">{{ title }}</h4>
+           <h1 class="banner-heading-2">Transforming Ideas<br>Into Beautiful<br> Experiences</h1>	  
+		   <p class="subtitle">I craft digital experiences that captivate, engage, and inspire<br> through thoughtful design and innovative solutions</p>
+		   <p>
+		      <a class="explore" href="">Explore My Work</a>
+		   </p>
+	    </div>     
+	</div>
+</div>
+<!--banners section end -->
+<!--About section start -->
+<div class="about-section ">
+    <div class="container">
+	    <h1 class="about-heading">About Me</h1>
+	    <div class="row">
+	       <div class="col-lg-5">
+		     <div class="about-img">
+			  </div>
+		   </div>
+		   <div class="col-lg-7">
+		    <div class="about-text">
+		       <h2>Passionate about creating<br> meaningful digital experiences</h2>
+			   <p>With over 5 years of experience in digital design, I specialize in creating user-centered solutions that bridge the gap between functionality and aesthetics. My approach combines strategic thinking with creative execution to deliver impactful results.</p>
+			   <p>I believe that great design is not just about how it looks, but how it works and how it makes people feel. Every project is an opportunity to solve problems and create connections that matter.</p>
+			   <p>When I'm not designing, you'll find me exploring new technologies, sketching ideas, or seeking inspiration in nature and architecture.</p></div>
+			   <p class="design">
+		      <a  href="">UI/UX Design </a>  
+			  <a  href="">Web Development</a> 
+			  <a  href="">Brand Identity</a>
+			  <a  href="">Motion Graphics</a>
+			  <a  href="">Prototyping</a> 
+			  <a  href="">Design Systems</a>
+		   </p>
+		   </div>
+	    </div>
+	</div>
+</div>
+<!--About section end -->
+<!--Featured section start -->
+<div class="Featured-section ">
+  <div class="container">
+	    <h1 class="Featured-heading">Featured Work</h1>
+    <div class="row">
+{% for item in portfolios %}
+       <div class="col-lg-4">
+		         <div class="featured-box">
+				   <div class="featured-img-box">
+				       <img src="{{ item.product_img.url }} " class="Featured-img-1"> 
+				   </div>				    
+				   <div class="featured-info">
+				       <h4 4lass="Featured-text">{{ item.product_title }}</h3>
+			           <p class="">{{ item.product_desc }}</p>
+					   <p>
+		      <a  href=""class="btn" >{{ item.product_tag }}</a>  
+
+			  </p>
+				   </div>
+				 </div>			    
+       </div>
+
+
+
+
+
+
+{% empty %}
+    <p>No portfolio items found.</p>
+{% endfor %}
+
+
+
+
+       
+<!--Featured section end -->
+<!--Together section start -->
+<div class="together-section  ">
+  <div class="container">
+	    <h1 class="together-heading">Let's Work Together</h1>
+		<p class="ready">Ready to bring your vision to life? Let's discuss how we can create something amazing together.<br> I'm always excited to take on new challenges and collaborate on innovative projects.</p>
+		<div class="form-box">
+		    <form>
+			   <div class="row">
+			        <div class="form-col">
+				      <label class="form-label"> Name</label>
+					  <input class="form-input" type="text" placeholder="Your Full Name">
+				    </div>
+					<div class="form-col">
+				      <label class="form-label"> Email</label>
+					  <input class="form-input" type="text" placeholder="demo@gmail.com">
+				    </div>
+			   </div>
+			   <div class="form-row">
+			      <label class="form-label"> Subject</label>
+				  <input class="form-input full-input" type="text" placeholder="demo@gmail.com">
+			   </div>
+			   	<div class="form-row">
+			      <label class="form-label"> Subject</label>
+				  <textarea class="form-textarea " type="text" placeholder="message"></textarea>
+			   </div>
+			   	<div class="form-row">
+			       <button class="send">Send Message</button>
+			   </div>
+			</form>
+		</div>
+  </div>
+</div>
+<!--Together section end -->
+{% endblock %}
